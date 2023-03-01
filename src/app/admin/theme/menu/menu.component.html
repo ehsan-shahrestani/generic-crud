@@ -1,0 +1,17 @@
+<mat-nav-list>
+  <mat-list-item>
+    <div class="flex justify-center items-center">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </div>
+  </mat-list-item>
+
+  <mat-expansion-panel *ngFor=" let item of menuItems" [class.mat-elevation-z0]="true">
+    <mat-expansion-panel-header>
+      {{item.title}}
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let subMenu of item.items" class="p-0">
+      <a mat-list-item [routerLink]="subMenu.routerLink">{{subMenu.title}}</a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</mat-nav-list>

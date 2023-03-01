@@ -1,0 +1,44 @@
+<mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>name</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.name ?? ''}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="family">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>family</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.family ?? ''}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="mobile">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>mobile</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.mobile ?? ''}}</mat-cell>
+  </ng-container>
+
+
+  <!-- actions -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="primary" (click)="addNew()">
+        <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let row; let i=index;">
+      <button mat-icon-button color="accent" (click)="edit(i)">
+        <mat-icon aria-label="Edit">edit</mat-icon>
+      </button>
+
+      <button mat-icon-button color="accent" (click)="deleteItem(row.id)">
+        <mat-icon aria-label="Delete">delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
