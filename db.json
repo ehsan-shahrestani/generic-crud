@@ -6,5 +6,12 @@
       "author": "typicode"
     }
   ],
-  "employee": []
+  "employee": [
+    {
+      "name": "ehsanshahrestani",
+      "family": "ehsahre",
+      "mobile": "\\787\\",
+      "id": 1
+    }
+  ]
 }

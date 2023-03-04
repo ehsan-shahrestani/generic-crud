@@ -3,6 +3,8 @@ import {EmployeeTypeBase} from "../_types/employee";
 import {MatTableDataSource} from "@angular/material/table";
 import {EmployeeService} from "../_services/employee.service";
 import {ToastrModule, ToastrService} from "ngx-toastr";
+import {MatDialog} from "@angular/material/dialog";
+import {EmployeeEditNewComponent} from "./employee-edit-new/employee-edit-new.component";
 
 @Component({
   selector: 'app-employee',
@@ -13,7 +15,11 @@ export class EmployeeComponent implements OnInit {
   displayedColumns = ['id', 'name', 'family', 'mobile', 'actions'];
   dataSource = new MatTableDataSource();
 
-  constructor(private employeeService: EmployeeService, private toastr : ToastrService) {
+  constructor(
+    private employeeService: EmployeeService,
+    private toastr: ToastrService,
+    public dialog: MatDialog
+  ) {
   }
 
   ngOnInit() {
@@ -34,15 +40,11 @@ export class EmployeeComponent implements OnInit {
   }
 
   addNew() {
-
-    this.employeeService.create(new EmployeeTypeBase({
-      name: "ehsan2",
-      family: "shahrestani2",
-      mobile: "099059138522"
-    })).subscribe({
-      next: () => {
-        this.loadData()
-      }
+    const dialogRef = this.dialog.open(EmployeeEditNewComponent, {
+      width: '350px',
+    })
+    dialogRef.afterClosed().subscribe(() => {
+      this.loadData()
     })
   }
 
