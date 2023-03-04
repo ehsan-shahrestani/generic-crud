@@ -35,12 +35,24 @@ export class EmployeeComponent implements OnInit {
   }
 
 
-  edit(i: number) {
-
+  edit(employee: EmployeeTypeBase) {
+    const dialogRef = this.dialog.open(EmployeeEditNewComponent, {
+      data: {
+        OpenState: 'update',
+        employee: employee
+      },
+      width: '350px',
+    })
+    dialogRef.afterClosed().subscribe(() => {
+      this.loadData()
+    })
   }
 
   addNew() {
     const dialogRef = this.dialog.open(EmployeeEditNewComponent, {
+      data: {
+        OpenState: 'new'
+      },
       width: '350px',
     })
     dialogRef.afterClosed().subscribe(() => {

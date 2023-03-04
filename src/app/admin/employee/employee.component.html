@@ -29,8 +29,8 @@
     </mat-header-cell>
 <!--test commit-->
     <mat-cell *matCellDef="let row; let i=index;">
-      <button mat-icon-button color="accent" (click)="edit(i)">
-        <mat-icon aria-label="Edit">edit</mat-icon>
+      <button mat-icon-button color="accent" (click)="edit(row)">
+        <mat-icon  aria-label="Edit">edit</mat-icon>
       </button>
 
       <button mat-icon-button color="accent" (click)="deleteItem(row.id)">

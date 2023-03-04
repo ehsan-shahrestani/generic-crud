@@ -1,4 +1,5 @@
-<h2 mat-dialog-title>Employee</h2>
+<h2 *ngIf="dialogState.OpenState == 'new'" mat-dialog-title>New Employee</h2>
+<h2 *ngIf="dialogState.OpenState == 'update'" mat-dialog-title>Update Employee</h2>
 <mat-dialog-content class="mat-typography">
   <form [formGroup]="employeeForm" (ngSubmit)="employeeForm.valid && submitForm()">
     <div>
@@ -31,6 +32,9 @@
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
   <button mat-button [mat-dialog-close]="true" type="button" [disabled]="!employeeForm.valid" (click)="submitForm()"
-          cdkFocusInitial>Add
+          cdkFocusInitial>
+    <span *ngIf="dialogState.OpenState == 'update'">Update</span>
+    <span *ngIf="dialogState.OpenState == 'new'">Add</span>
+
   </button>
 </mat-dialog-actions>
