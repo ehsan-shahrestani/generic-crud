@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EmployeeTypeBase} from "../_types/employee";
 import {MatTableDataSource} from "@angular/material/table";
 import {EmployeeService} from "../_services/employee.service";
+import {ToastrModule, ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-employee',
@@ -12,7 +13,7 @@ export class EmployeeComponent implements OnInit {
   displayedColumns = ['id', 'name', 'family', 'mobile', 'actions'];
   dataSource = new MatTableDataSource();
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(private employeeService: EmployeeService, private toastr : ToastrService) {
   }
 
   ngOnInit() {
@@ -33,7 +34,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   addNew() {
-    // this.employeeService.get().subscribe()
+
     this.employeeService.create(new EmployeeTypeBase({
       name: "ehsan2",
       family: "shahrestani2",

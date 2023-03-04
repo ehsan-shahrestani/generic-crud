@@ -7,7 +7,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+import {ErrorInterceptor} from "./admin/_interceptor/error.interceptor";
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,16 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatIconModule, MatSidenavModule
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    ToastrModule.forRoot(),
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
