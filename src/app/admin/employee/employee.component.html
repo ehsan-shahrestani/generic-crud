@@ -5,17 +5,17 @@
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>name</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>name</mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.name ?? ''}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="family">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>family</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>family</mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.family ?? ''}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="mobile">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>mobile</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>mobile</mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.mobile ?? ''}}</mat-cell>
   </ng-container>
 
@@ -27,10 +27,10 @@
         <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
       </button>
     </mat-header-cell>
-<!--test commit-->
+    <!--test commit-->
     <mat-cell *matCellDef="let row; let i=index;">
       <button mat-icon-button color="accent" (click)="edit(row)">
-        <mat-icon  aria-label="Edit">edit</mat-icon>
+        <mat-icon aria-label="Edit">edit</mat-icon>
       </button>
 
       <button mat-icon-button color="accent" (click)="deleteItem(row.id)">
