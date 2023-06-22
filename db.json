@@ -2,14 +2,27 @@
   "company": [
     {
       "id": 1,
-      "title": "ehsan",
-      "author": "typicode"
+      "name": "Karakoo",
+      "address": "berlin,",
+      "fax": "432-95874345-48"
+    },
+    {
+      "id": 2,
+      "name": "Circlution",
+      "address": "kopenhagen",
+      "fax": "0958406=545-345"
+    },
+    {
+      "id": 3,
+      "name": "Google",
+      "address": "Kanada",
+      "fax": "tre-6545-2462"
     }
   ],
   "employee": [
     {
       "id": 1,
-      "name": "poria",
+      "name": "poria2323",
       "family": "hosseini",
       "mobile": "091020710941"
     },
@@ -24,6 +37,18 @@
       "name": "kazem",
       "family": "hardani",
       "mobile": "098765432"
+    },
+    {
+      "id": 4,
+      "name": "new",
+      "family": "new ",
+      "mobile": "nrntr"
+    },
+    {
+      "id": 5,
+      "name": "rewdsdfdsfsf",
+      "family": "rewew",
+      "mobile": "erwe"
     }
   ]
 }

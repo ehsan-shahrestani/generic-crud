@@ -5,11 +5,7 @@ export class CompanyTypeBase extends GenericType<CompanyTypeBase> {
   logo?: string;
   fax?: string;
   phone?: string;
-  family?:string
-
-  // get getFamilly(){
-  //   return this.name  +''+ this.family
-  // }
+  address?:string
 
   constructor(model?: Partial<CompanyTypeBase>) {
     super(model);

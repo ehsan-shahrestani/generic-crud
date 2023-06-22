@@ -1,1 +1,39 @@
-<p>new-company works!</p>
+<div class="w-6/12 mx-auto">
+
+  <h2 class="font-bold text-2xl text-center mb-5">New Company</h2>
+  <form [formGroup]="oneObjectFrom" (ngSubmit)="oneObjectFrom.valid && create()">
+    <div>
+      <mat-form-field class="w-full" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required formControlName="name">
+        <mat-error *ngIf="form?.['name']?.errors?.['required']">Name is Required</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>address</mat-label>
+        <input matInput type="text" required formControlName="address">
+        <mat-error *ngIf="form?.['address']?.errors?.['required']">Address is Required</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Fax</mat-label>
+        <input matInput type="text" required formControlName="fax">
+        <mat-error *ngIf="form?.['fax']?.errors?.['required']">Fax is Required</mat-error>
+      </mat-form-field>
+    </div>
+
+
+  </form>
+
+  <button mat-button (click)="showCreatePage = false" color="primary">Cancel</button>
+  <button mat-raised-button color="accent" type="button" [disabled]="!oneObjectFrom.valid" (click)="create()"
+  >
+    <span>Add</span>
+
+  </button>
+
+</div>
