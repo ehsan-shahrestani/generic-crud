@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
-import {ErrorInterceptor} from "./admin/_interceptor/error.interceptor";
+import {ErrorInterceptor} from "./core/_interceptor/error.interceptor";
 import {MatDialogModule} from '@angular/material/dialog';
 import { StoreModule } from '@ngrx/store';
 

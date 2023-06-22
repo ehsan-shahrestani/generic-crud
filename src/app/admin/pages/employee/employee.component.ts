@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {EmployeeTypeBase} from "../_types/employee";
+import {EmployeeTypeBase} from "../../../core/_types/employee";
 import {MatTableDataSource} from "@angular/material/table";
-import {EmployeeService} from "../_services/employee.service";
+import {EmployeeService} from "./services/employee.service";
 import {ToastrModule, ToastrService} from "ngx-toastr";
 import {MatDialog} from "@angular/material/dialog";
-import {EmployeeEditNewComponent} from "./employee-edit-new/employee-edit-new.component";
+import {EmployeeEditNewComponent} from "./components/employee-edit-new/employee-edit-new.component";
 
 @Component({
   selector: 'app-employee',

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {ResourceService} from "../_classes/ResourceService";
+import {ResourceService} from "../../../../core/_classes/ResourceService";
 import {HttpClient} from "@angular/common/http";
-import {EmployeeTypeBase} from "../_types/employee";
+import {EmployeeTypeBase} from "../../../../core/_types/employee";
 
 @Injectable({
   providedIn: 'root'

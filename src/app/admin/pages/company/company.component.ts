@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CompanyService} from "../_services/company.service";
+import {CompanyService} from "./services/company.service";
 
 export interface PeriodicElement {
   name: string;

@@ -1,9 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {EmployeeService} from "../../_services/employee.service";
+import {EmployeeService} from "../../services/employee.service";
 import {ToastrService} from "ngx-toastr";
-import {EmployeeTypeBase} from "../../_types/employee";
+import {EmployeeTypeBase} from "../../../../../core/_types/employee";
 
 export interface DialogData {
   OpenState: 'new' | 'update',
