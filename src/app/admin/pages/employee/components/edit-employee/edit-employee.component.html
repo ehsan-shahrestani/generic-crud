@@ -1,0 +1,39 @@
+<div class="w-6/12 mx-auto">
+
+  <h2 class="font-bold text-2xl text-center mb-5">Edit Employee</h2>
+  <form [formGroup]="oneObjectFrom" (ngSubmit)="oneObjectFrom.valid && update()">
+    <div>
+      <mat-form-field class="w-full" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required formControlName="name">
+        <mat-error *ngIf="form?.['name']?.errors?.['required']">Name is Required</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Family</mat-label>
+        <input matInput type="text" required formControlName="family">
+        <mat-error *ngIf="form?.['family']?.errors?.['required']">Family is Required</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Mobile</mat-label>
+        <input matInput type="text" required formControlName="mobile">
+        <mat-error *ngIf="form?.['mobile']?.errors?.['required']">Mobile is Required</mat-error>
+      </mat-form-field>
+    </div>
+
+
+  </form>
+
+  <button mat-button (click)="showUpdatePage = false" color="primary">Cancel</button>
+  <button mat-raised-button color="accent" type="button" [disabled]="!oneObjectFrom.valid" (click)="update()"
+  >
+    <span>Edit</span>
+
+  </button>
+
+</div>

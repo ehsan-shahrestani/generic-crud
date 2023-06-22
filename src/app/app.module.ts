@@ -11,7 +11,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {ErrorInterceptor} from "./core/_interceptor/error.interceptor";
 import {MatDialogModule} from '@angular/material/dialog';
-import { StoreModule } from '@ngrx/store';
+import {StoreModule} from '@ngrx/store';
+import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { StoreModule } from '@ngrx/store';
     StoreModule.forRoot({}, {})
   ],
   providers: [
+    MessageService,
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
 
   ],

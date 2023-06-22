@@ -15,9 +15,9 @@ export abstract class ResourceService<T extends GenericType<T>> {
   ) {
   }
 
-  public create(resource: Partial<T> & { toJson: () => T }): Observable<T> {
+  public create(resource: Partial<T>): Observable<T> {
     return this.httpClient
-      .post<T>(`${this.baseUrl + this.apiUrl}`, resource.toJson())
+      .post<T>(`${this.baseUrl + this.apiUrl}`, resource)
       .pipe(map((result) => new this.tConstructor(result)));
   }
 
@@ -29,13 +29,13 @@ export abstract class ResourceService<T extends GenericType<T>> {
 
   public getById(id: number): Observable<T> {
     return this.httpClient
-      .get<T>(`${this.baseUrl + this.apiUrl}`)
+      .get<T>(`${this.baseUrl + this.apiUrl}/` + id)
       .pipe(map((result) => new this.tConstructor(result)));
   }
 
   public update(resource: Partial<T> & { toJson: () => T }): Observable<T> {
     return this.httpClient
-      .put<T>(`${this.baseUrl + this.apiUrl}/${resource.id}`, resource.toJson())
+      .put<T>(`${this.baseUrl + this.apiUrl}/${resource.id}`, resource)
       .pipe(map((result) => new this.tConstructor(result)));
   }
 

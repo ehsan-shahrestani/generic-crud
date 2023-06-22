@@ -11,12 +11,17 @@ import { EmployeeEditNewComponent } from './components/employee-edit-new/employe
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatDialogModule} from "@angular/material/dialog";
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import {ButtonModule} from "primeng/button";
 
 
 @NgModule({
   declarations: [
     EmployeeComponent,
     EmployeeEditNewComponent,
+    AddEmployeeComponent,
+    EditEmployeeComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     FormsModule,
     MatInputModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule
   ]
 })
 export class EmployeeModule { }

@@ -1,17 +1,37 @@
-<mat-nav-list>
-  <mat-list-item>
-    <div class="flex justify-center items-center">
-      <mat-icon>dashboard</mat-icon>
-      <span>Dashboard</span>
-    </div>
-  </mat-list-item>
+<!--<mat-nav-list>-->
+<!--  <mat-list-item>-->
+<!--    <div class="flex justify-center items-center">-->
+<!--      <mat-icon>dashboard</mat-icon>-->
+<!--      <span>Dashboard</span>-->
+<!--    </div>-->
+<!--  </mat-list-item>-->
 
-  <mat-expansion-panel *ngFor=" let item of menuItems" [class.mat-elevation-z0]="true">
-    <mat-expansion-panel-header>
-      {{item.title}}
-    </mat-expansion-panel-header>
-    <mat-nav-list (click)="selectItem.emit(true)" *ngFor="let subMenu of item.items" class="p-0">
-      <a mat-list-item [routerLink]="subMenu.routerLink">{{subMenu.title}}</a>
-    </mat-nav-list>
-  </mat-expansion-panel>
+<!--  &lt;!&ndash;  <mat-expansion-panel *ngFor=" let item of menuItems" [class.mat-elevation-z0]="true">&ndash;&gt;-->
+<!--  &lt;!&ndash;    <mat-expansion-panel-header>&ndash;&gt;-->
+<!--  &lt;!&ndash;      {{item.title}}&ndash;&gt;-->
+<!--  &lt;!&ndash;    </mat-expansion-panel-header>&ndash;&gt;-->
+<!--  <mat-nav-list *ngFor=" let item of menuItems" (click)="selectItem.emit(true)" class="p-0">-->
+<!--    <a mat-list-item [routerLink]="item.routerLink">{{item.title}}</a>-->
+<!--  </mat-nav-list>-->
+<!--  &lt;!&ndash;  </mat-expansion-panel>&ndash;&gt;-->
+<!--</mat-nav-list>-->
+
+
+<!--<mat-sidenav-container>-->
+<!--  <mat-sidenav mode="side" opened>-->
+<mat-nav-list>
+  <div class="flex  mt-4 justify-center items-center">
+    <mat-icon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </div>
+  <div class="border-b border-pink-600 my-5"></div>
+  <a  *ngFor=" let item of menuItems" (click)="selectItem.emit(true)" mat-list-item [routerLink]="item.routerLink"
+     routerLinkActive="active">
+    <span>{{item.title}}</span>
+  </a>
 </mat-nav-list>
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--    &lt;!&ndash; Your main content here &ndash;&gt;-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->

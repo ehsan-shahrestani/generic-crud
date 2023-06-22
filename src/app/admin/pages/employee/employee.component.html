@@ -23,13 +23,13 @@
   <!-- actions -->
   <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef>
-      <button mat-icon-button color="primary" (click)="addNew()">
+      <button mat-icon-button color="primary" routerLink="add">
         <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
       </button>
     </mat-header-cell>
     <!--test commit-->
     <mat-cell *matCellDef="let row; let i=index;">
-      <button mat-icon-button color="accent" (click)="edit(row)">
+      <button mat-icon-button color="accent" routerLink="edit/{{row.id}}">
         <mat-icon aria-label="Edit">edit</mat-icon>
       </button>
 

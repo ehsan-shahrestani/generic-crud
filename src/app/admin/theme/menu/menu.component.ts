@@ -16,27 +16,28 @@ export interface IMenuItems {
 })
 export class MenuComponent implements OnInit {
   menuItems: IMenuItems[] = []
-@Output() selectItem = new EventEmitter<boolean>(false)
+  @Output() selectItem = new EventEmitter<boolean>(false)
+
   constructor() {
 
   }
 
   ngOnInit() {
     this.menuItems = [
+      // {
+      //   title: 'list',
+      //   items: [
       {
-        title: 'list',
-        items: [
-          {
-            title: 'company',
-            routerLink: '/admin/company'
-          },
-          {
-            title: 'employees',
-            routerLink: '/admin/employee'
-          }
-        ]
-
+        title: 'company',
+        routerLink: '/admin/company'
+      },
+      {
+        title: 'employees',
+        routerLink: '/admin/employee'
       }
+      //   ]
+      //
+      // }
     ]
 
   }
