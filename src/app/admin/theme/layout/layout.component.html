@@ -2,7 +2,7 @@
   <app-header [sideNave]="sidenav"></app-header>
   <mat-sidenav-container class="example-container h-screen">
     <mat-sidenav fixedTopGap="50" #sidenav mode="push">
-      <app-menu></app-menu>
+      <app-menu (selectItem)="sidenav.close()"></app-menu>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="   lg:px-8 md:px-6 lg:py-4   w-full">

@@ -11,6 +11,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import {ErrorInterceptor} from "./admin/_interceptor/error.interceptor";
 import {MatDialogModule} from '@angular/material/dialog';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatSidenavModule,
     ToastrModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

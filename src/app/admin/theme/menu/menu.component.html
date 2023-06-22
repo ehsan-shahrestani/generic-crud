@@ -10,7 +10,7 @@
     <mat-expansion-panel-header>
       {{item.title}}
     </mat-expansion-panel-header>
-    <mat-nav-list *ngFor="let subMenu of item.items" class="p-0">
+    <mat-nav-list (click)="selectItem.emit(true)" *ngFor="let subMenu of item.items" class="p-0">
       <a mat-list-item [routerLink]="subMenu.routerLink">{{subMenu.title}}</a>
     </mat-nav-list>
   </mat-expansion-panel>

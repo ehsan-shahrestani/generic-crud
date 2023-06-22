@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 export interface IMenuItems {
   title: string;
@@ -16,7 +16,7 @@ export interface IMenuItems {
 })
 export class MenuComponent implements OnInit {
   menuItems: IMenuItems[] = []
-
+@Output() selectItem = new EventEmitter<boolean>(false)
   constructor() {
 
   }
@@ -40,4 +40,6 @@ export class MenuComponent implements OnInit {
     ]
 
   }
+
+
 }
